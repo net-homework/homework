@@ -8,16 +8,37 @@
 <body>
 <div class="top  clearfix">
     <ul class="float-left">
-        <li>网易<i>角</i></li>
+        <!--单击时class="icon-down"换成class="icon-up"-->
+        <li>网易<i class="icon-down"> </i></li>
         <li>博客</li>
         <li>摄影</li>
         <li>随便看看</li>
     </ul>
-    <ul class="float-left">
-        <li><span class="top-usr">中午好，testblog </span>（<i>信</i>5）</li>
-        <li><span><i>家</i>个人中心</span> <span>消息（</span><span class="top-info">1274</span>）</span><span>反馈</span></li>
-        <li class="top-logout">退出</li>
-    </ul>
+    <!--弹出层,默认隐藏-->
+    <div class="top-pop hide">
+        <ul>
+            <li class="top-current">新闻</li>
+            <li>微博</li>
+            <li>邮箱</li>
+            <li>闪电邮</li>
+            <li>相册</li>
+            <li>有道</li>
+            <li>手机邮</li>
+            <li>印象派</li>
+            <li>梦幻人生</li>
+            <li>更多</li>
+        </ul>
+    </div>
+    <div class="float-right">
+        <ul class="float-left">
+            <li><span class="top-usr">中午好，testblog </span>（<i class="icon-envelope"></i>5）</li>
+            <li>|</li>
+            <li><span><i class="icon-home"> </i>个人中心</span> <span>消息（</span><span class="top-info">1274</span>）</span><span>反馈</span></li>
+            <li>|</li>
+            <li class="top-logout">退出</li>
+        </ul>
+    </div>
+
 </div>
 <div class="container">
     <div class="header">
@@ -25,7 +46,7 @@
             <img class="float-left" src="images/usrlogo.png" alt=""/>
 
             <div class="header-info">
-                <span class="header-usr"">欢迎！testblog</span>
+                <span class="header-usr">欢迎！testblog</span>
                 <button class="header-up">传照片</button>
             </div>
         </div>
@@ -33,12 +54,12 @@
     <div class="bd clearfix">
         <div class="nav">
             <ul>
-                <li><strong>博客动态</strong></li>
+                <li><i class="icon-news"></i><strong>博客动态</strong></li>
                 <li><a href="#">博客消息</a></li>
                 <li><a href="#">消息中心</a></li>
             </ul>
             <ul>
-                <li><strong>博客管理</strong></li>
+                <li><i class="icon-setting"></i><strong>博客管理</strong></li>
                 <li><a href="#">日志管理</a></li>
                 <li><a href="#">博友管理</a></li>
                 <li><a href="#">访问统计</a></li>
@@ -46,7 +67,8 @@
                 <li><a href="#">博客装扮</a></li>
             </ul>
             <ul>
-                <li><strong>手机博客</strong></li>
+                <li><i class="icon-service"></i><strong>服务</strong></li>
+                <li><a href="#">手机博客</a></li>
                 <li><a href="#">博客复制</a></li>
                 <li><a href="#">邮件写博</a></li>
                 <li><a href="#">手机邮</a></li>
@@ -72,37 +94,42 @@
                         <input class="float-right btn" type="button" value="清空"/>
                         <input class="float-right btn" type="button" value="发布"/>
                     </div>
-                    <div class="directory">
                         <ul>
-                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i>角</i></span><span
+                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i class="icon-down"></i></span><span
                                     class="float-right">编辑</span>
 
                                 <p class="directory-detail"><span>2010-06-23 11:36 </span><span>阅读11</span>
-                                    <span>评论</span></p>
+                                    <span>评论</span><span>0</span></p>
                                 <hr/>
                             </li>
-                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i>角</i></span><span
+                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i class="icon-down"></i></span><span
                                     class="float-right">编辑</span>
 
                                 <p class="directory-detail"><span>2010-06-23 11:36 </span><span>阅读11</span>
-                                    <span>评论</span></p>
+                                    <span>评论</span><span>0</span></p>
                                 <hr/>
                             </li>
-                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i>角</i></span><span
+                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i class="icon-down"></i></span><span
                                     class="float-right">编辑</span>
 
                                 <p class="directory-detail"><span>2010-06-23 11:36 </span><span>阅读11</span>
-                                    <span>评论</span></p>
+                                    <span>评论</span><span>0</span></p>
                                 <hr/>
                             </li>
-                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i>角</i></span><span
+                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i class="icon-down"></i></span><span
                                     class="float-right">编辑</span>
 
                                 <p class="directory-detail"><span>2010-06-23 11:36 </span><span>阅读11</span>
-                                    <span>评论</span></p>
+                                    <span>评论</span><span>0</span><</p>
                                 <hr/>
                             </li>
+                            <li><input type="checkbox" value=""/><a href="#">js高性能原则（转载）</a> <span class="float-right">更多<i class="icon-down"></i></span><span
+                                    class="float-right">编辑</span>
 
+                                <p class="directory-detail"><span>2010-06-23 11:36 </span><span>阅读11</span>
+                                    <span>评论</span><span>0</span></p>
+                                <hr/>
+                            </li>
                         </ul>
                         <input id="btn-all" type="checkbox" value=""/><a href="#">全选</a>
                         <input class="btn" type="button" value="删除"/>
@@ -114,19 +141,18 @@
                     <p class="center">没有标签</p>
                     <hr/>
                 </div>
-            </div>
+
             <div class="aside float-right">
                 <h2>好友最新日志</h2>
                 <ul>
-                    <!--切出40*40的图后，删掉style-->
-                    <li><img class="float-left" src="images/usrlogo.png" alt=""
-                             style="width: 40px; height: 40px;"/><p><strong class="aside--block">小油菜</strong><a
+                    <li><img class="float-left" src="images/friend.png" alt=""/><p><strong class="aside--block">小油菜
+                    </strong><a
                             href="#">zhit:教你如何...</a></p></li>
-                    <li><img class="float-left" src="images/usrlogo.png" alt=""
-                             style="width: 40px; height: 40px;"/><p><strong class="aside--block">小油菜</strong><a
+                    <li><img class="float-left" src="images/friend.png" alt=""/><p><strong class="aside--block">小油菜
+                    </strong><a
                             href="#">zhit:教你如何...</a></p></li>
-                    <li><img class="float-left" src="images/usrlogo.png" alt=""
-                             style="width: 40px; height: 40px;"/><p><strong class="aside--block">小油菜</strong><a
+                    <li><img class="float-left" src="images/friend.png" alt=""/><p><strong class="aside--block">小油菜
+                    </strong><a
                             href="#">zhit:教你如何...</a></p></li>
                 </ul>
             </div>
@@ -142,7 +168,7 @@
             <li>相关法律</li>
             <li>博客风格</li>
             <li>手机博客</li>
-            <li><i>标</i>订阅此博客</li>
+            <li><i class="icon-subscribe"></i>订阅此博客</li>
         </ul>
         <p>网易公司版权所有@1997-2011</p>
     </div>

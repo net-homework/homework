@@ -21,9 +21,6 @@ a:hover {
     text-decoration: underline;
 }
 
-a:link {
-    color: rgb(0, 0, 238);;
-}
 
 /** 重置图片元素 **/
 img {
@@ -75,10 +72,15 @@ ul {
 
 .top {
     height: 27px;
-    width: 100%;
+    line-height: 27px;
+    width: 990px;
+    margin: 0 auto;
     background: #f9f9f9;
+    position: relative;
 }
-
+.top li{
+    padding-right: 10px;
+}
 .top-usr {
     color: #666666;
 }
@@ -90,7 +92,30 @@ ul {
 .top-logout {
     color: #a4a4a4;
 }
+/*选中网易时的样式*/
+.top-current{
+    background-color: #979797;
+}
+/*下拉菜单样式*/
+.top-pop{
+    position: absolute;
+    top: 27px;
+    width:60px;
+    height: 290px;
+    border: 1px solid #bbbbbb;
+    z-index: 1;
+}
+.top-pop li:last-child{
+    border-top:1px solid #bbbbbb;
+    border-bottom:  1px solid #bbbbbb;
 
+}
+.top-pop li{
+    padding-left: 3px;
+    padding-right: 0px;
+    height: 29px;
+    line-height: 29px;
+}
 .container {
     width: 100%;
     background-color: #f7f7f7;
@@ -136,8 +161,11 @@ ul {
     margin-bottom: 20px;
     border: 1px solid #bbbbbb;
 }
+.nav li{
+    padding-left: 30px;
+}
 
-.nav li:hover {
+.nav li:hover{
     background-color: #f8f8f8;
 }
 
@@ -219,6 +247,7 @@ hr{
     width: 205px;
     padding: 10px;
     background-color: #fafafa;
+    margin-top: 40px;
 }
 .aside p{
     padding-left:45px;
@@ -250,4 +279,38 @@ hr{
     width: 90px;
     text-align: center;
     border: 1px solid #bbbbbb;
+}
+/*设置图标*/
+[class^="icon-"]{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: url("../images/icon.png");
+    background-repeat:no-repeat;
+
+}
+.icon-news{
+    background-position:0 2px;
+}
+.icon-setting{
+    background-position:-16px 0;
+}
+.icon-service{
+    background-position:-32px 0;
+}
+.icon-envelope{
+    background-position:-49px 0;
+}
+
+.icon-subscribe{
+    background-position:-64px 0;
+}
+.icon-down{
+    background-position:-80px 0;
+}
+.icon-up{
+    background-position:-96px 0;
+}
+.icon-home{
+    background-position:-112px 0;
 }
