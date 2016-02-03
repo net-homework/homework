@@ -1,0 +1,9 @@
+/* 重置 */
+* {margin: 0;padding: 0;}
+/* 默认 */
+strong,em {font-style: normal;font-weight: bold;}
+body {word-wrap: break-word;font: 12px/normal "宋体", tahoma, "Srial", helvetica, sans-serif;color:#555;background-color:#F7F7F7;}
+ul li {list-style: none;}
+a {color:#555;text-decoration: none;}
+/* 统一调用背景图 */
+.m-nav a,.m-prompt a,.m-prompt em {background: url(../images/sprite.png) no-repeat 9999px 9999px;}
