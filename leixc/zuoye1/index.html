@@ -31,8 +31,8 @@
 	<header id="header" class="g-hd">
 		<div class="g-menu f-cfb">
 			<ul class="m-nav f-lf">
-				<li id="select_pop">网易<span href="#" class="c-icon-down"></span>
-					<ul class="f-hide">
+				<li id="select_pop"><a href="#">网易</a><span class="c-icon-down" id="top_icon"></span>
+					<ul class="f-hide" id="pop">
 						<li>微博</li>
 						<li>邮箱</li>
 						<li class="f-selected">闪电邮</li>
@@ -100,37 +100,36 @@
 				<!-- 2 columns layout-->
 					<div class="g-tab f-lf">
 						<ul class="m-nav2 f-cfb">
-								<li class="c-tab1 c-iselected"><a href="#log" title="blog">日志</a></li>
-								<li class="c-tab2"><a href="#label" title="label">标签</a></li>
+							<li class="c-iselected"><a href="#log" title="blog" id="tab_log">日志</a></li>
+							<li><a href="#label" title="label" id="tab_label">标签</a></li>
 						</ul>
 						<hr />
-						<div class="m-cont f-cfb">
+						<div class="m-cont f-cfb" id="log">
 							<input type="text" name="title" class="c-title" value="日志标题" />
 							<textarea name="content" class="c-bcon">这里可以写日志哦～</textarea>
 							<input type="button" name="clear" value="清空" class="c-clr f-rf" />
 							<input type="submit" name="submit" value="发布" class="c-sbt f-rf" />
 						</div>
 						<div class="m-bhist">
-							<ul>
-								<li class="f-cfb">
-									<input type="checkbox" name="history_item" value="1" /><a href="#" title="" class="c-logtitle">dwr+struts+spring+hibemate简单配置</a>
+							<ol id="blog_list">
+								<li>
+									<input type="checkbox" name="history_item" value="0" /><a href="#" title="" class="c-logtitle">dwr+struts+spring+hibemate简单配置</a>
 									<div class="c-action">
 										<a href="#edit"	class="c-edit">编辑</a>
-										<ul href="#more" class="c-more f-show-part">
-											<li><a href="#more">更多<span class="c-icon-down"></span></a></li>
+										<ul href="#more" class="c-more f-show-part" id="more_0">
+											<li>更多<span class="c-icon-down" id="icon0"></span></li>
 											<li><a href="#delete">删除</a></li>
-											<li><a href="#top">置顶</a></li>
+											<li><a href="#top">取消置顶</a></li>
 										</ul>
 									</div>
 									<p class="c-idetail"><span class="c-time">2010-06-09 13:44:38 </span><span>阅读23</span><span>评论0</span></p>
 								</li>
-
 								<li>
-									<input type="checkbox" name="history_item" value="2" /><a href="#" title="" class="c-logtitle">dwr+struts+spring的简单配置</a>
+									<input type="checkbox" name="history_item" value="1" /><a href="#" title="" class="c-logtitle">dwr+struts+spring的简单配置</a>
 									<div class="c-action">
 										<a href="#edit"	class="c-edit">编辑</a>
-										<ul href="#more" class="c-more f-show-part">
-											<li><a href="#more">更多<span class="c-icon-down"></span></a></li>
+										<ul href="#more" class="c-more f-show-part" id="more_1">
+											<li>更多<span class="c-icon-down" id="icon1"></span></li>
 											<li><a href="#delete">删除</a></li>
 											<li><a href="#top">置顶</a></li>
 										</ul>
@@ -138,11 +137,11 @@
 									<p class="c-idetail"><span class="c-time">2010-06-07 18:12 </span><span>阅读56</span><span>评论0</span></p>
 								</li>
 								<li>
-									<input type="checkbox" name="history_item" value="3" /><a href="#" title="" class="c-logtitle">js高性能原则（转载)</a>
+									<input type="checkbox" name="history_item" value="2" /><a href="#" title="" class="c-logtitle">js高性能原则（转载)</a>
 									<div class="c-action">
 										<a href="#edit"	class="c-edit">编辑</a>
-										<ul href="#more" class="c-more f-show-part">
-											<li><a href="#more">更多<span class="c-icon-down"></span></a></li>
+										<ul href="#more" class="c-more f-show-part" id="more_2">
+											<li>更多<span class="c-icon-down" id="icon2"></span></li>
 											<li><a href="#delete">删除</a></li>
 											<li><a href="#top">置顶</a></li>
 										</ul>
@@ -150,11 +149,11 @@
 									<p class="c-idetail"><span class="c-time">2010-06-23 11:36:00 </span><span>阅读11</span><span>评论0</span></p>
 								</li>
 								<li>
-									<input type="checkbox" name="history_item" value="4" /><a href="#" title="" class="c-logtitle">dwr+spring+hibemate简单配置</a>
+									<input type="checkbox" name="history_item" value="3" /><a href="#" title="" class="c-logtitle">dwr+spring+hibemate简单配置</a>
 									<div class="c-action">
 										<a href="#edit"	class="c-edit">编辑</a>
-										<ul href="#more" class="c-more f-show-part">
-											<li><a href="#more">更多<span class="c-icon-down"></span></a></li>
+										<ul href="#more" class="c-more f-show-part" id="more_3">
+											<li>更多<span class="c-icon-down" id="icon3"></span></li>
 											<li><a href="#delete">删除</a></li>
 											<li><a href="#top">置顶</a></li>
 										</ul>
@@ -162,11 +161,11 @@
 									<p class="c-idetail"><span class="c-time">2010-06-07 19:20:00 </span><span>阅读48</span><span>评论0</span></p>
 								</li>
 								<li>
-									<input type="checkbox" name="history_item" value="5" /><a href="#" title="" class="c-logtitle">dwr的简单配置</a>
+									<input type="checkbox" name="history_item" value="4" /><a href="#" title="" class="c-logtitle">dwr的简单配置</a>
 									<div class="c-action">
 										<a href="#edit"	class="c-edit">编辑</a>
-										<ul href="#more" class="c-more f-show-part">
-											<li><a href="#more">更多<span class="c-icon-down"></span></a></li>
+										<ul href="#more" class="c-more f-show-part" id="more_4">
+											<li>更多<span class="c-icon-down" id="icon4"></span></li>
 											<li><a href="#delete">删除</a></li>
 											<li><a href="#top">置顶</a></li>
 										</ul>
@@ -177,7 +176,7 @@
 									<input type="checkbox" name="all_items" value="a" id="all_items" /> 全选
 									<input type="button" name="delete" id="delete" class="c-btn-del" value="删除" />
 								</li>
-							</ul>
+							</ol>
 						</div>
 					</div>
 					<div class="g-fbl f-rf">
@@ -209,5 +208,7 @@
 		<p>网易公司版权所有©1997-2011</p>
 	</footer><!-- /footer -->
 
+	<script type="text/javascript" src="js/eventUtil.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
