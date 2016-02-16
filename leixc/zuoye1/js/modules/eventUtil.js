@@ -28,7 +28,7 @@ var EventUtil = {
 		 /* get the target of a event... */ 
 		 return event.target || event.srcElement;
 	},
-	preventDefaultE: function (event) {
+	preventDefault: function (event) {
 		 /* prevent the default action of the browser... */
 		 if(event.preventDefault){
 		 	event.preventDefault();
@@ -36,7 +36,7 @@ var EventUtil = {
 		 	event.returnValue = false;
 		 }
 	},
-	stopPropagationE: function (event) {
+	stopPropagation: function (event) {
 		 /* stop the event propagation or event bubble... */ 
 		 if(event.stopPropagation){
 		 	event.stopPropagation();
