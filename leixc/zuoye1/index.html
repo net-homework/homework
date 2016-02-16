@@ -113,8 +113,8 @@
 									<input type="submit" name="submit" value="发布" class="c-sbt f-rf" />
 								</div>
 								<div class="m-bhist">
-									<ol id="blog_list">
-										<li><!-- item 0 -->
+									<ol id="blog_list"><!-- 从后台获取日志列表数据 动态添加列表元素 -->
+										<li id="top_blog"><!-- top blog item:rank=0 -->
 											<input type="checkbox" name="history_item" value="0" /><a href="#" title="" class="c-logtitle">dwr+struts+spring+hibemate简单配置</a>
 											<div class="c-action">
 												<a href="#edit"	class="c-edit">编辑</a>
@@ -137,7 +137,7 @@
 													<a id="more_1" href="#">更多<span class="c-icon-down" id="icon1"></span></a>
 													<ul class="f-hide">
 														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#">置顶</a></li>
+														<li class="c-top"><a href="#top_blog">置顶</a></li>
 													</ul>
 												</div>
 											</div>
@@ -151,7 +151,7 @@
 													<a id="more_2" href="#">更多<span class="c-icon-down" id="icon2"></span></a>
 													<ul class="f-hide">
 														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#">置顶</a></li>
+														<li class="c-top"><a href="#top_blog">置顶</a></li>
 													</ul>
 												</div>
 											</div>
@@ -165,7 +165,7 @@
 													<a id="more_3" href="#">更多<span class="c-icon-down" id="icon3"></span></a>
 													<ul class="f-hide">
 														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#">置顶</a></li>
+														<li class="c-top"><a href="#top_blog">置顶</a></li>
 													</ul>
 												</div>
 											</div>
@@ -179,7 +179,7 @@
 													<a id="more_4" href="#">更多<span class="c-icon-down" id="icon4"></span></a>
 													<ul class="f-hide">
 														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#">置顶</a></li>
+														<li class="c-top"><a href="#top_blog">置顶</a></li>
 													</ul>
 												</div>
 											</div>
@@ -199,12 +199,12 @@
 					</div>
 					<div class="g-fbl f-rf">
 						<p><strong>好友最新日志</strong></p>
-						<ul class="m-flist" id="fris_list">
-							<li class="f-cfb"><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><a href="#" class="c-fn">小油菜</a><br /><a href="#" class="c-fbc" id="fri_con_0">2hit:教你如何把美妞拍的...</a></li>
-							<li class="f-cfb"><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><a href="#" class="c-fn">小油菜</a><br /><a href="#" class="c-fbc" id="fri_con_1">2hit:教你如何把美妞拍的...</a></li>
-							<li class="f-cfb"><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><a href="#" class="c-fn">小油菜</a><br /><a href="#" class="c-fbc" id="fri_con_2">2hit:教你如何把美妞拍的...</a></li>
-							<li class="f-cfb"><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><a href="#" class="c-fn">小油菜</a><br /><a href="#" class="c-fbc" id="fri_con_3">2hit:教你如何把美妞拍的...</a></li>
-							<li class="f-cfb"><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><a href="#" class="c-fn">小油菜</a><br /><a href="#" class="c-fbc" id="fri_con_4">2hit:教你如何把美妞拍的...</a></li>
+						<ul class="m-flist" id="frid_list"><!-- 从后台获取好友日志列表相关数据 -->
+							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_0">小油菜</em><p id="fri_con_0">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
+							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_1">小油菜</em><p id="fri_con_1">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
+							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_2">小油菜</em><p id="fri_con_2">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
+							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_3">小油菜</em><p id="fri_con_3">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
+							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_4">小油菜</em><p id="fri_con_4">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
 						</ul>
 					</div>	
 				</div>

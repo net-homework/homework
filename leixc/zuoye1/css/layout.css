@@ -9,9 +9,9 @@
 .f-show {position: absolute;}
 
 /* 布局 */
-.g-hd {width: 990px;margin: 0 auto;}
+.g-hd {min-width: 1100px;margin: 0 auto;}
 .g-menu {height: 27px;line-height: 27px;width: 100%;}
-.g-bd {width: 100%;margin:0 auto;}
+.g-bd {min-width: 1100px;margin:0 auto;}
 .g-user {height: 69px;background-color: #dedede;margin-bottom: 10px;}
 .g-mn {width: 990px;margin: 0 auto;}
 .g-sd {width: 143px;}
@@ -19,7 +19,7 @@
 .g-bl {margin-top: 10px;}
 .g-tab {width: 550px;}
 .g-fbl {width: 205px;padding: 10px;background-color: #f8f8f8;}
-.g-ft {display: block;text-align: center;margin: 0 auto;}
+.g-ft {display: block;text-align: center;min-width: 1100px;margin: 0 auto;}
 
 /* 模块 */
 /* 设置导航栏 */
@@ -47,8 +47,8 @@
 .m-bhist {margin-top: 10px;}
 
 .m-flist {margin-top: 10px;}
-.m-flist li{display: block;margin-bottom: 10px;}
-.m-flist a {color: #21759b;}
+.m-flist li{display: block;color: #21759b;height:40px;margin-bottom: 10px;}
+.m-flist li p {height: 1em;line-height: 1em;margin-top: 10px;overflow: hidden;word-wrap:break-word; }
 
 .m-ft-nav {display: block;margin: 20px;}
 .m-ft-nav li {display: inline-block;padding-right: 5px;}

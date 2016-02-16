@@ -163,7 +163,7 @@ VM.prototype.create = function(fn) {
 };
 /**
  * the directives of the View model
- * @param name£ºthe name of this directive, like ng-repeat
+ * @param nameÂ£Âºthe name of this directive, like ng-repeat
  * @param el: the dom element contains this directive
  * @param fn: the function deal with the dom element
  * @param arg: arguments of this directives, like ng-repeat="key in object"
@@ -230,17 +230,17 @@ var logShowView =
     "<ul>" +
     "<li>" +
     "<input type='checkbox' name='history_item' value='1' />" +
-    "<a href='#' title='' class='c-iname'>dwr+struts+spring+hibemate¼òµ¥ÅäÖÃ</a>" +
-    "<div class='c-action f-rf'><a href='#edit'	class='c-edit'>±à¼­</a><a href='#more' class='c-more'>¸ü¶à<span class='c-icon-down'></span></a></div>" +
-    "<p class='c-idetail'><span class='c-time'>2010-06-09 13:44:38 </span><span>ÔÄ¶Á23</span><span>ÆÀÂÛ0</span></p>" +
+    "<a href='#' title='' class='c-iname'>dwr+struts+spring+hibemateÂ¼Ã²ÂµÂ¥Ã…Ã¤Ã–Ãƒ</a>" +
+    "<div class='c-action f-rf'><a href='#edit'	class='c-edit'>Â±Ã Â¼Â­</a><a href='#more' class='c-more'>Â¸Ã¼Â¶Ã <span class='c-icon-down'></span></a></div>" +
+    "<p class='c-idetail'><span class='c-time'>2010-06-09 13:44:38 </span><span>Ã”Ã„Â¶Ã23</span><span>Ã†Ã€Ã‚Ã›0</span></p>" +
     "</li>" +
-    "<li><input type='checkbox' name='all_items' value='a' id='all_items' />È«Ñ¡<input type='button' name='delete' id='delete' class='c-btn-del' value='É¾³ı' /></li>" +
+    "<li><input type='checkbox' name='all_items' value='a' id='all_items' />ÃˆÂ«Ã‘Â¡<input type='button' name='delete' id='delete' class='c-btn-del' value='Ã‰Â¾Â³Ã½' /></li>" +
     "</div>";
 var logView = logCreateView + logShowView;
 
 /***********************************************the simple implementation of the webapp****************************************/
 /**
- * »¹ÊÇĞ´×î¼òµ¥µÄ°É¡£¡£¡£¡£
+ * Â»Â¹ÃŠÃ‡ÃÂ´Ã—Ã®Â¼Ã²ÂµÂ¥ÂµÃ„Â°Ã‰Â¡Â£Â¡Â£Â¡Â£Â¡Â£
  */
 
 window.onhashchange = function() {
@@ -259,10 +259,10 @@ window.onhashchange = function() {
                     var mainDom = document.getElementById('main'); //need to set a main block, all the elements are render in this block
                     var logCreateView =
                         "<div class='m-cont f-cfb'>" +
-                        "<input type='text' name='title' class='c-title' value='ÈÕÖ¾±êÌâ' />" +
-                        "<textarea name='content' class='c-bcon'>ÕâÀï¿ÉÒÔĞ´ÈÕÖ¾Å¶¡«</textarea>" +
-                        "<input type='button' name='clear' value='Çå¿Õ' class='c-clr f-rf' />" +
-                        "<input type='submit' name='submit' value='·¢²¼' class='c-sbt f-rf' />" +
+                        "<input type='text' name='title' class='c-title' value='ÃˆÃ•Ã–Â¾Â±ÃªÃŒÃ¢' />" +
+                        "<textarea name='content' class='c-bcon'>Ã•Ã¢Ã€Ã¯Â¿Ã‰Ã’Ã”ÃÂ´ÃˆÃ•Ã–Â¾Ã…Â¶Â¡Â«</textarea>" +
+                        "<input type='button' name='clear' value='Ã‡Ã¥Â¿Ã•' class='c-clr f-rf' />" +
+                        "<input type='submit' name='submit' value='Â·Â¢Â²Â¼' class='c-sbt f-rf' />" +
                         "</div>";
                     mainDom.innerHTML(logCreateView);
                     var liList = document.createDocumentFragment();
@@ -277,45 +277,3 @@ window.onhashchange = function() {
         //do something
     }
 };
-
-/** 
- * function:add top dropdown list
- * author: lxc
- * date:2016-02-04
- */
-    var topDrop = function () {
-         var _topEle = document.getElementById('select_pop');
-         var _popL = document.getElementById('pop');
-         var _icon = document.getElementById('top_icon');
-         EventUtil.addHandler(_topEle,'mouseover',function () {
-             /* show list... */ 
-             _icon.setAttribute('class', 'c-icon-up');
-             _popL.setAttribute('class', 'f-show');
-        });
-         EventUtil.addHandler(_topEle,'mouseout',function () {
-             /* hide list... */
-             _icon.setAttribute('class', 'c-icon-down');
-             _popL.setAttribute('class', 'f-hide');
-        });
-    };
-
-/** 
- * function:add top more dropdown list
- * author: lxc
- * date:2016-02-04
- */
-    var moreDrop = function () {
-        var _blog_list = document.getElementById('blog_list');
-        var _items = _blog_list.getElementsByTagName('ul');
-        var _len = _items.length;
-        for (var i=0;i<_len;i++) {
-            var _icon = document.getElementById('icon'+i);
-            EventUtil.addHandler(document.getElementById('more_'+i),'click',function () {
-    //       /* show list... */
-             var _target = EventUtil.getTarget(event);
-             _target.parentNode.setAttribute('class', 'f-show-all');
-             var _icon = _target.getElementsByTagName('span');
-             _icon[0].setAttribute('class', 'c-icon-up');
-            });
-         }
-     };
