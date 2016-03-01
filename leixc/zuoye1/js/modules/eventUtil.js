@@ -1,4 +1,9 @@
-//Event Utilities :add remove 
+/**
+ * 
+ * EventUtil Module
+ * @type {Object}
+ * 
+ */
 var EventUtil = {
 	addHandler: function (element, type, handler) {
 		 /* add */
