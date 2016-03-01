@@ -64,7 +64,7 @@
                     return 0;
                 }
             }
-            //rendering 日志列表	
+            //rendering 日志列表    
             _top_item = myBlogList[0]; //置顶日志初始值为排序后的日志列表第一个元素
             //更新置顶元素
             for (var i = 0; i < _len; i++) {
@@ -83,7 +83,7 @@
                 "<input type='checkbox' name='history_item' value='0' /><a href='#' class='c-logtitle' id='bcon_0'>";
             var _top_blog_str_2 = _top_item.title + "</a>" +
                 "<div class='c-action'>" +
-                "<a href='#edit'	class='c-edit' id='edit_0'>编辑" +
+                "<a href='#edit'    class='c-edit' id='edit_0'>编辑" +
                 "</a>" +
                 "<div class='c-more'>" +
                 "<a id='more_0' href='#'>更多<span class='c-icon-down' id='icon0'></span>" +
@@ -112,15 +112,14 @@
             for (var i = 1; i < myBlogList.length; i++) {
                 _blog_list_str = _blog_list_str + showBlog(myBlogList[i], i); //除去列表第一个日志，日志从1开始编号
             }
+            //rendering html element 
+            _blog_list_str = _blog_list_str +
+                "<li><input type='checkbox' name='all_items' value='all' id='all_items' /> 全选" +
+                "<input type='button' name='delete' id='delete' class='c-btn-del' value='删除' /></li></ol>";
+            _blog_list_ele.innerHTML = _blog_list_str;
         } else {
             console.log('No blog to list.');
         }
-
-        //rendering html element 
-        _blog_list_str = _blog_list_str +
-            "<li><input type='checkbox' name='all_items' value='all' id='all_items' /> 全选" +
-            "<input type='button' name='delete' id='delete' class='c-btn-del' value='删除' /></li></ol>";
-        _blog_list_ele.innerHTML = _blog_list_str;
 
         function showBlog(item, index) {
             // 区别私有日志和默认日志
@@ -128,7 +127,7 @@
             var _myblog_str_2 = "<a href='#' class='c-logtitle' id='bcon_" + index + "'>" +
                 item.title + "</a>" +
                 "<div class='c-action'>" +
-                "<a href='#edit'	class='c-edit' id='edit_" + index + "'>编辑" +
+                "<a href='#edit'    class='c-edit' id='edit_" + index + "'>编辑" +
                 "</a>" +
                 "<div class='c-more'>" +
                 "<a id='more_" + index + "' href='#'>更多<span class='c-icon-down' id='icon" + index + "'></span>" +
@@ -154,7 +153,7 @@
             }
             return _myblog_str;
         }
-        /* 渲染完元素 绑定事件	*/
+        /* 渲染完元素 绑定事件   */
         edit_moreEvent();
         multipleDelete();
 
@@ -211,125 +210,124 @@
         for (var i = 0; i < _len; i++) {
             /*编辑事件绑定*/
             var _edit = document.getElementById('edit_' + i);
+            if (_edit) {
+                EventUtil.addHandler(_edit, 'click', function() {
+                    //先清空之前的内容
+                    clearBlog();
 
-            EventUtil.addHandler(_edit, 'click', function() {
-                //先清空之前的内容
-                clearBlog();
-
-                event = EventUtil.getEvent(event);
-                // EventUtil.preventDefault(event);
-                EventUtil.stopPropagation(event);
-
-                var _target = EventUtil.getTarget(event); //id=edit_x
-                if (_target.getAttribute('class') === 'c-edit') {
-                    var index = _target.getAttribute('id').split('_')[1];
-                    editBlog(myBlogList[index], index);
-                }
-            });
-
-            /*更多下拉列表事件绑定*/
-            var _icon = document.getElementById('icon' + i);
-            var _more = document.getElementById('more_' + i);
-
-            /* show list */
-            EventUtil.addHandler(_more, 'click', function() {
-                event = EventUtil.getEvent(event);
-                EventUtil.preventDefault(event);
-                EventUtil.stopPropagation(event);
-
-                var _target = EventUtil.getTarget(event);
-
-                if (_target.tagName === 'A') {
-                    _target.parentNode.setAttribute('class', 'c-more f-show-all');
-                    _target.parentNode.getElementsByTagName('ul')[0].setAttribute('class', 'f-show');
-                }
-                //var _icon = _target.getElementsByTagName('span');
-                // _icon[0].setAttribute('class', 'c-icon-up');
-                /* hide list */
-                EventUtil.addHandler(body, 'click', function() {
-                    //点击页面其他地方 隐藏下拉列表
                     event = EventUtil.getEvent(event);
+                    // EventUtil.preventDefault(event);
                     EventUtil.stopPropagation(event);
-                    var _cur_target = EventUtil.getTarget(event);
-                    if (_cur_target.tagName != _target.tagName) {
-                        _target.parentNode.setAttribute('class', 'c-more');
-                        _target.parentNode.getElementsByTagName('ul')[0].setAttribute('class', 'f-hide');
-                        // _icon[0].setAttribute('class', 'c-icon-down');
+
+                    var _target = EventUtil.getTarget(event); //id=edit_x
+                    if (_target.getAttribute('class') === 'c-edit') {
+                        var index = _target.getAttribute('id').split('_')[1];
+                        editBlog(myBlogList[index], index);
                     }
                 });
+            }
 
-                var _cancel_top = document.getElementById('cancel_top');
-                if (_cancel_top) {
-                    EventUtil.addHandler(_cancel_top, 'click', function() {
+            /*更多下拉列表事件绑定*/
+            var _more = document.getElementById('more_' + i);
+            if (_more) {
+                /* show list */
+                EventUtil.addHandler(_more, 'click', function() {
+                    event = EventUtil.getEvent(event);
+                    EventUtil.preventDefault(event);
+                    EventUtil.stopPropagation(event);
+
+                    var _target = EventUtil.getTarget(event);
+
+                    if (_target.tagName === 'A') {
+                        _target.parentNode.setAttribute('class', 'c-more f-show-all');
+                        _target.parentNode.getElementsByTagName('ul')[0].setAttribute('class', 'f-show');
+                    }
+                    /* hide list */
+                    EventUtil.addHandler(body, 'click', function() {
+                        //点击页面其他地方 隐藏下拉列表
                         event = EventUtil.getEvent(event);
                         EventUtil.stopPropagation(event);
-                        // 取消置顶
-                        // 发送ajax取消置顶请求 成功时执行下面操作
-                        service.untop_blog(myBlogList[0].id, function(o) {
-                            if (o == 1) {
-                                if (myBlogList[0].rank === "5") {
-                                    myBlogList[0].rank = "0"; //取消置顶标志
-                                }
-                                render.showBlogList(); //重新渲染
-                            } else {
-                                console.log('Untop Failed');
-                            }
-                        });
+                        var _cur_target = EventUtil.getTarget(event);
+                        if (_cur_target.tagName != _target.tagName) {
+                            _target.parentNode.setAttribute('class', 'c-more');
+                            _target.parentNode.getElementsByTagName('ul')[0].setAttribute('class', 'f-hide');
+                            // _icon[0].setAttribute('class', 'c-icon-down');
+                        }
                     });
-                }
 
-                var _top = document.getElementsByClassName('c-top');
-                if (_top) {
-                    for (var i = 0; i < _top.length; i++) {
-                        EventUtil.addHandler(_top[i], 'click', function() {
-                            //置顶 (非第一行元素 index >= 1 )
-                            //发送ajax置顶请求 成功时执行下面操作
+                    var _cancel_top = document.getElementById('cancel_top');
+                    if (_cancel_top) {
+                        EventUtil.addHandler(_cancel_top, 'click', function() {
                             event = EventUtil.getEvent(event);
                             EventUtil.stopPropagation(event);
-                            var _cur_click = EventUtil.getTarget(event);
-                            var _parents = (_cur_click.tagName === "LI") ? _cur_click : _cur_click.parentElement;
-                            var index = _parents.getAttribute('id').split('_')[1]; //获取日志在原myBlogList中index
-
-                            service.top_blog(myBlogList[index].id, function(o) {
+                            // 取消置顶
+                            // 发送ajax取消置顶请求 成功时执行下面操作
+                            service.untop_blog(myBlogList[0].id, function(o) {
                                 if (o == 1) {
                                     if (myBlogList[0].rank === "5") {
-                                        //取消原置顶日志
-                                        myBlogList[0].rank = "0"; //取消原有置顶日志，避免两个置顶标志	 		  	
+                                        myBlogList[0].rank = "0"; //取消置顶标志
                                     }
-                                    myBlogList[index].rank = "5"; //设置置顶标记
                                     render.showBlogList(); //重新渲染
                                 } else {
-                                    console.log('Top Failed.');
+                                    console.log('Untop Failed');
                                 }
                             });
                         });
                     }
-                }
 
-                var _delete_1 = document.getElementsByClassName('c-delete');
-                if (_delete_1) {
-                    for (var i = 0; i < _delete_1.length; i++) {
-                        EventUtil.addHandler(_delete_1[i], 'click', function() {
-                            //删除单篇日志
-                            //发送ajax删除单篇日志请求 成功时执行下面操作
-                            event = EventUtil.getEvent(event);
-                            EventUtil.stopPropagation(event);
-                            var _cur_click = EventUtil.getTarget(event);
-                            var _parents = (_cur_click.tagName === "LI") ? _cur_click : _cur_click.parentElement;
-                            var index = _parents.getAttribute('id').split('_')[1]; //id=delete_x
+                    var _top = document.getElementsByClassName('c-top');
+                    if (_top) {
+                        for (var i = 0; i < _top.length; i++) {
+                            EventUtil.addHandler(_top[i], 'click', function() {
+                                //置顶 (非第一行元素 index >= 1 )
+                                //发送ajax置顶请求 成功时执行下面操作
+                                event = EventUtil.getEvent(event);
+                                EventUtil.stopPropagation(event);
+                                var _cur_click = EventUtil.getTarget(event);
+                                var _parents = (_cur_click.tagName === "LI") ? _cur_click : _cur_click.parentElement;
+                                var index = _parents.getAttribute('id').split('_')[1]; //获取日志在原myBlogList中index
 
-                            service.delete_blogs(myBlogList[index].id, function(o) {
-                                if (o == 1) {
-                                    myBlogList.splice(index, 1);
-                                    render.showBlogList();
-                                } else {
-                                    console.log('Delete this Failed.');
-                                }
+                                service.top_blog(myBlogList[index].id, function(o) {
+                                    if (o == 1) {
+                                        if (myBlogList[0].rank === "5") {
+                                            //取消原置顶日志
+                                            myBlogList[0].rank = "0"; //取消原有置顶日志，避免两个置顶标志               
+                                        }
+                                        myBlogList[index].rank = "5"; //设置置顶标记
+                                        render.showBlogList(); //重新渲染
+                                    } else {
+                                        console.log('Top Failed.');
+                                    }
+                                });
                             });
-                        });
+                        }
                     }
-                }
-            });
+
+                    var _delete_1 = document.getElementsByClassName('c-delete');
+                    if (_delete_1) {
+                        for (var i = 0; i < _delete_1.length; i++) {
+                            EventUtil.addHandler(_delete_1[i], 'click', function() {
+                                //删除单篇日志
+                                //发送ajax删除单篇日志请求 成功时执行下面操作
+                                event = EventUtil.getEvent(event);
+                                EventUtil.stopPropagation(event);
+                                var _cur_click = EventUtil.getTarget(event);
+                                var _parents = (_cur_click.tagName === "LI") ? _cur_click : _cur_click.parentElement;
+                                var index = _parents.getAttribute('id').split('_')[1]; //id=delete_x
+
+                                service.delete_blogs(myBlogList[index].id, function(o) {
+                                    if (o == 1) {
+                                        myBlogList.splice(index, 1);
+                                        render.showBlogList();
+                                    } else {
+                                        console.log('Delete this Failed.');
+                                    }
+                                });
+                            });
+                        }
+                    }
+                });
+            }
         }
     }
 
@@ -482,71 +480,73 @@
      */
     var multipleDelete = function() {
         var _all = document.getElementById('all_items');
-        var _blog_list = document.getElementById('blog_list');
-        var _inputs = _blog_list.getElementsByTagName('input'); //列表中所有表单元素 包括全选和删除
-        var _delete = document.getElementById('delete'); //删除按钮
-        var _lens = _inputs.length - 2; //所有checkbox
-        var _count = 0; //已选数
+        if (_all) {
+            var _blog_list = document.getElementById('blog_list');
+            var _inputs = _blog_list.getElementsByTagName('input'); //列表中所有表单元素 包括全选和删除
+            var _delete = document.getElementById('delete'); //删除按钮
+            var _lens = _inputs.length - 2; //所有checkbox
+            var _count = 0; //已选数
 
-        //给每个checkbox绑定计数器
-        for (var i = 0; i < _lens; i++) {
-            if (_inputs[i].type === "checkbox" && _inputs[i].name === "history_item") {
-                EventUtil.addHandler(_inputs[i], 'click', function() {
-                    if (this.checked == true)
-                        _count++;
-                    else if (this.checked == false)
-                        _count--;
+            //给每个checkbox绑定计数器
+            for (var i = 0; i < _lens; i++) {
+                if (_inputs[i].type === "checkbox" && _inputs[i].name === "history_item") {
+                    EventUtil.addHandler(_inputs[i], 'click', function() {
+                        if (this.checked == true)
+                            _count++;
+                        else if (this.checked == false)
+                            _count--;
+                    });
+                }
+            }
+
+            EventUtil.addHandler(_delete, 'click', function() {
+                deleteBlog();
+                render.showBlogList();
+            });
+
+            function deleteBlog() {
+                var _ids = [];
+                var _nochecks = []; //存放未被选中的元素
+                for (var i = 0; i < _lens; i++) {
+                    if (_inputs[i].type === "checkbox" && _inputs[i].name === "history_item" && _inputs[i].checked == false) { //选中的全删除 未选中checked == false的留下显示
+                        _nochecks.push(myBlogList[i]); //inputs与myBlogList一一对应
+                    } else if (_inputs[i].checked == true) {
+                        _ids.push(myBlogList[i].id);
+                    }
+                }
+                // 发送ajax删除请求
+                service.delete_blogs(_ids, function(o) {
+                    if (o == 1) {
+                        myBlogList = _nochecks;
+                    } else {
+                        console.log('Delete Failed.');
+                    }
                 });
             }
-        }
 
-        EventUtil.addHandler(_delete, 'click', function() {
-            deleteBlog();
-            render.showBlogList();
-        });
-
-        function deleteBlog() {
-            var _ids = [];
-            var _nochecks = []; //存放未被选中的元素
-            for (var i = 0; i < _lens; i++) {
-                if (_inputs[i].type === "checkbox" && _inputs[i].name === "history_item" && _inputs[i].checked == false) { //选中的全删除 未选中checked == false的留下显示
-                    _nochecks.push(myBlogList[i]); //inputs与myBlogList一一对应
-                } else if (_inputs[i].checked == true) {
-                    _ids.push(myBlogList[i].id);
-                }
-            }
-            // 发送ajax删除请求
-            service.delete_blogs(_ids, function(o) {
-                if (o == 1) {
-                    myBlogList = _nochecks;
-                } else {
-                    console.log('Delete Failed.');
-                }
+            EventUtil.addHandler(_all, 'click', function() {
+                if (this.checked == true)
+                    checkAll('history_item');
+                else
+                    clearAll('history_item');
             });
-        }
 
-        EventUtil.addHandler(_all, 'click', function() {
-            if (this.checked == true)
-                checkAll('history_item');
-            else
-                clearAll('history_item');
-        });
+            function checkAll(name) {
 
-        function checkAll(name) {
-
-            for (var i = 0; i < _lens; i++) {
-                if (_inputs[i].type === "checkbox" && _inputs[i].name === name) {
-                    _inputs[i].checked = true;
-                    _count = _lens;
+                for (var i = 0; i < _lens; i++) {
+                    if (_inputs[i].type === "checkbox" && _inputs[i].name === name) {
+                        _inputs[i].checked = true;
+                        _count = _lens;
+                    }
                 }
             }
-        }
 
-        function clearAll(name) {
-            for (var i = 0; i < _lens; i++) {
-                if (_inputs[i].type === "checkbox" && _inputs[i].name === name) {
-                    _inputs[i].checked = false;
-                    _count = 0;
+            function clearAll(name) {
+                for (var i = 0; i < _lens; i++) {
+                    if (_inputs[i].type === "checkbox" && _inputs[i].name === name) {
+                        _inputs[i].checked = false;
+                        _count = 0;
+                    }
                 }
             }
         }
