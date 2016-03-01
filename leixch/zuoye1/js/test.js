@@ -98,7 +98,7 @@
                 "</span><span>" + "评论" +
                 _top_item.commentCount +
                 "</span></p></li>";
-            var _private_icon = " <span class='c-icon-private'></span>";
+            var _private_icon = " <span class='c-private'></span>";
             var _top_blog_str = "";
             if (_top_item.allowView === "10000") {
                 //私有日志

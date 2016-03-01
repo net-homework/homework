@@ -65,7 +65,8 @@
 .c-icon-down {background-position: -80px 0;margin: 0;}
 .c-icon-up {background-position: -96px 0;margin: 0;}
 .c-icon-home {background-position: -112px 0;}
-.c-icon-private {background-position: -128px 0;background-color: blue;//test}
+
+.c-private {display: inline-block;width: 14px;height: 14px;line-height:14px;background: url(../images/private.png);background-repeat: no-repeat;margin-left: 10px;vertical-align: middle;}
 
 .c-wel {color: #666666;}
 .c-pic-self {width: 50px;height: 50px;}
@@ -82,7 +83,7 @@
 .m-bhist ol > li {display: block;height: 30px;border-bottom: 1px dotted #d8e0e5;padding: 10px;position: relative;}
 .m-bhist ol > li:last-child {border-bottom: none;}
 .m-bhist li, .m-bhist li a {color: #21759b;}
-.m-bhist .c-logtitle {margin-left: 10px;}
+.m-bhist .c-logtitle {margin-left: 5px;}
 .c-action {position: absolute;top: 10px;right: 10px;}
 .c-edit,.c-more {display:inline-block;margin-right: 10px;}
 .f-show-all {width:48px;height:45px;border:1px solid #c8d9e3;background-color:white;float: right;}
