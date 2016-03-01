@@ -33,6 +33,7 @@
 .m-nav .f-show li {display: block;height: 30px;line-height: 30px;color: #7d7d7d;background-color: white;}
 .f-show li:hover {background-color: #7d7d7d;color: #fff;}
 .f-show li:last-child {border-top: 1px solid #ececec;}
+.m-nav .f-drop {display: inline-block;line-height: 14px;background-color: #7d7d7d;color: #fff;}
 
 .m-bt,.m-bm,.m-sv {margin-bottom: 20px;border: 1px solid #bbbbbb;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;background-color: white;}
 .g-sd a {color: #21759b;}
@@ -55,15 +56,16 @@
 
 /* 元件 */
 /* 设置小图标 */
-[class^='c-icon-']{display: inline-block;width: 14px;height: 14px;line-height:14px;background: url(../images/icons.png);background-repeat: no-repeat;border: none;}
+[class^='c-icon-']{display: inline-block;width: 14px;height: 14px;line-height:14px;background: url(../images/icons.png);background-repeat: no-repeat;margin:0 5px;border: none;}
 .c-icon-news {background-position: 0 2px;}
 .c-icon-setting {background-position:-16px 0;}
 .c-icon-service {background-position: -32px 0;}
 .c-icon-mail {background-position: -49px 0;}
 .c-icon-subscribe {background-position: -64px 0;}
-.c-icon-down {background-position: -80px 0;}
-.c-icon-up {background-position: -96px 0;}
+.c-icon-down {background-position: -80px 0;margin: 0;}
+.c-icon-up {background-position: -96px 0;margin: 0;}
 .c-icon-home {background-position: -112px 0;}
+.c-icon-private {background-position: -128px 0;background-color: blue;//test}
 
 .c-wel {color: #666666;}
 .c-pic-self {width: 50px;height: 50px;}
@@ -84,6 +86,7 @@
 .c-action {position: absolute;top: 10px;right: 10px;}
 .c-edit,.c-more {display:inline-block;margin-right: 10px;}
 .f-show-all {width:48px;height:45px;border:1px solid #c8d9e3;background-color:white;float: right;}
+.f-show-all li {display: block;width: 48px;}
 .c-more .f-show li:hover {background-color:#ececec;}
 
 

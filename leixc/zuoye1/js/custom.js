@@ -163,7 +163,7 @@ VM.prototype.create = function(fn) {
 };
 /**
  * the directives of the View model
- * @param name£ºthe name of this directive, like ng-repeat
+ * @param name: the name of this directive, like ng-repeat
  * @param el: the dom element contains this directive
  * @param fn: the function deal with the dom element
  * @param arg: arguments of this directives, like ng-repeat="key in object"
@@ -236,11 +236,18 @@ var logShowView =
     "</li>" +
     "<li><input type='checkbox' name='all_items' value='a' id='all_items' />È«Ñ¡<input type='button' name='delete' id='delete' class='c-btn-del' value='É¾³ý' /></li>" +
     "</div>";
+var logCreateView =
+    "<div class='m-cont f-cfb'>" +
+    "<input type='text' name='title' class='c-title' value='ÈÕÖ¾±êÌâ' />" +
+    "<textarea name='content' class='c-bcon'>ÕâÀï¿ÉÒÔÐ´ÈÕÖ¾Å¶¡«</textarea>" +
+    "<input type='button' name='clear' value='Çå¿Õ' class='c-clr f-rf' />" +
+    "<input type='submit' name='submit' value='·¢²¼' class='c-sbt f-rf' />" +
+    "</div>";
 var logView = logCreateView + logShowView;
 
 /***********************************************the simple implementation of the webapp****************************************/
 /**
- * »¹ÊÇÐ´×î¼òµ¥µÄ°É¡£¡£¡£¡£
+ * 
  */
 
 window.onhashchange = function() {

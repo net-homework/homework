@@ -31,7 +31,7 @@
 	<header id="header" class="g-hd">
 		<div class="g-menu f-cfb">
 			<ul class="m-nav f-lf">
-				<li id="select_pop"><a href="#">网易</a><span class="c-icon-down" id="top_icon"></span>
+				<li id="select_pop"><span id="top_menu">网易<span class="c-icon-down" id="top_icon"></span></span>
 					<ul class="f-hide" id="pop">
 						<li>微博</li>
 						<li>邮箱</li>
@@ -49,10 +49,8 @@
 				<li><a href="#" title="">随便看看</a></li>
 			</ul>				
 			<ul class="m-prompt f-rf">
-				<li class="c-wel"><span id="time">中午好</span>，<span id="userID">testblog</span> （<span class="c-icon-mail"></span><em>5</em>） </li>
-				<li>|</li>
-				<li><a href="#" title="user center"><span class="c-icon-home"></span>个人中心</a> 消息（<a href="#" title="message" id="message" class="c-count">1274</a>） <a href="#" title="feedback">反馈</a></li>	
-				<li>|</li>
+				<li class="c-wel"><span id="time">中午好</span>，<span id="userID">testblog</span>（<span class="c-icon-mail"></span><em>5</em>）</li><li>|</li>
+				<li><a href="#" title="user center"><span class="c-icon-home"></span>个人中心</a> 消息（<a href="#" title="message" id="message" class="c-count">1274</a>） <a href="#" title="feedback">反馈</a></li><li>|</li>
 				<li><a href="#" title="quit" class="c-quit" id="quit">退出</a></li>
 			</ul>
 		</div>
@@ -112,101 +110,14 @@
 									<input type="button" name="clear" value="清空" class="c-clr f-rf" />
 									<input type="submit" name="submit" value="发布" class="c-sbt f-rf" />
 								</div>
-								<div class="m-bhist">
-									<ol id="blog_list"><!-- 从后台获取日志列表数据 动态添加列表元素 -->
-										<li id="top_blog"><!-- top blog item:rank=0 -->
-											<input type="checkbox" name="history_item" value="0" /><a href="#" title="" class="c-logtitle">dwr+struts+spring+hibemate简单配置</a>
-											<div class="c-action">
-												<a href="#edit"	class="c-edit">编辑</a>
-												<div class="c-more">
-													<a id="more_0" href="#">更多<span class="c-icon-down" id="icon0"></span></a>
-													<ul class="f-hide">
-														<li class="c-delete"><a href="#">删除</a></li>
-														<li id="cancel_top"><a href="#">取消置顶</a></li>
-													</ul>
-												</div>
-											</div>
-											<p class="c-idetail"><span class="c-time">2010-06-09 13:44:38 </span><span>阅读23</span><span>评论0</span></p>
-										</li>
-										<!-- end -->
-										<li>
-											<input type="checkbox" name="history_item" value="1" /><a href="#" title="" class="c-logtitle">dwr+struts+spring的简单配置</a>
-											<div class="c-action">
-												<a href="#edit"	class="c-edit">编辑</a>
-												<div class="c-more">
-													<a id="more_1" href="#">更多<span class="c-icon-down" id="icon1"></span></a>
-													<ul class="f-hide">
-														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#top_blog">置顶</a></li>
-													</ul>
-												</div>
-											</div>
-											<p class="c-idetail"><span class="c-time">2010-06-07 18:12 </span><span>阅读56</span><span>评论0</span></p>
-										</li>
-										<li>
-											<input type="checkbox" name="history_item" value="2" /><a href="#" title="" class="c-logtitle">js高性能原则（转载)</a>
-											<div class="c-action">
-												<a href="#edit"	class="c-edit">编辑</a>
-												<div class="c-more">
-													<a id="more_2" href="#">更多<span class="c-icon-down" id="icon2"></span></a>
-													<ul class="f-hide">
-														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#top_blog">置顶</a></li>
-													</ul>
-												</div>
-											</div>
-											<p class="c-idetail"><span class="c-time">2010-06-23 11:36:00 </span><span>阅读11</span><span>评论0</span></p>
-										</li>
-										<li>
-											<input type="checkbox" name="history_item" value="3" /><a href="#" title="" class="c-logtitle">dwr+spring+hibemate简单配置</a>
-											<div class="c-action">
-												<a href="#edit"	class="c-edit">编辑</a>
-												<div class="c-more">
-													<a id="more_3" href="#">更多<span class="c-icon-down" id="icon3"></span></a>
-													<ul class="f-hide">
-														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#top_blog">置顶</a></li>
-													</ul>
-												</div>
-											</div>
-											<p class="c-idetail"><span class="c-time">2010-06-07 19:20:00 </span><span>阅读48</span><span>评论0</span></p>
-										</li>
-										<li>
-											<input type="checkbox" name="history_item" value="4" /><a href="#" title="" class="c-logtitle">dwr的简单配置</a>
-											<div class="c-action">
-												<a href="#edit"	class="c-edit">编辑</a>
-												<div class="c-more">
-													<a id="more_4" href="#">更多<span class="c-icon-down" id="icon4"></span></a>
-													<ul class="f-hide">
-														<li class="c-delete"><a href="#">删除</a></li>
-														<li class="c-top"><a href="#top_blog">置顶</a></li>
-													</ul>
-												</div>
-											</div>
-											<p class="c-idetail"><span class="c-time">2010-06-07 14:57:21 </span><span>阅读48</span><span>评论0</span></p>
-										</li>
-										<li>
-											<input type="checkbox" name="all_items" value="a" id="all_items" /> 全选
-											<input type="button" name="delete" id="delete" class="c-btn-del" value="删除" />
-										</li>
-									</ol>
-								</div>
+								<div class="m-bhist" id="blog_list"></div>
 							</div>
 							<div id="con_1" class="m-tab-con-1 f-hide">
 								没有标签
 							</div>
 						</div>
 					</div>
-					<div class="g-fbl f-rf">
-						<p><strong>好友最新日志</strong></p>
-						<ul class="m-flist" id="frid_list"><!-- 从后台获取好友日志列表相关数据 -->
-							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_0">小油菜</em><p id="fri_con_0">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
-							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_1">小油菜</em><p id="fri_con_1">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
-							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_2">小油菜</em><p id="fri_con_2">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
-							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_3">小油菜</em><p id="fri_con_3">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
-							<li><img class="c-pic-fri f-lf" src="http://os.blog.163.com/common/ava.s?host=testblog1&b=0&r=-1"><em class="c-fn" id="userName_4">小油菜</em><p id="fri_con_4">2hit:教你如何把美妞拍的教你如何把美妞拍的教你如何把美妞拍的...</p></li>
-						</ul>
-					</div>	
+					<div class="g-fbl f-rf" id="friend_blog"></div>	
 				</div>
 			</div>
 		</div>
@@ -227,6 +138,7 @@
 	</footer><!-- /footer -->
 
 	<script type="text/javascript" src="js/modules/eventUtil.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/test.js"></script>
 </body>
 </html>
